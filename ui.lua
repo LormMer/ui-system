@@ -155,13 +155,9 @@ Rejoin.TextSize = 50.000
 UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(90, 8, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
 UIGradient_5.Parent = Rejoin
 
-TextBox.FocusLost:Connect(function()
-    if TextBox.Text == "KEY-A" then
-        _G.Key = "KEY-A"
-    end
-end)
+
 Connect.MouseButton1Down:connect(function()
-    if _G.Key == "KEY-A" then
+    if TextBox.Text == "KEY-A" then
         print(true)
     end
 end)
