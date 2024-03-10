@@ -3,7 +3,7 @@
 
 -- Instances:
 
-local ScreenGui = Instance.new("ScreenGui")
+local key = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Name = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
@@ -15,13 +15,20 @@ local UICorner_3 = Instance.new("UICorner")
 local UIGradient_2 = Instance.new("UIGradient")
 local Tab = Instance.new("Frame")
 local UICorner_4 = Instance.new("UICorner")
+local TextBox = Instance.new("TextBox")
+local UICorner_5 = Instance.new("UICorner")
+local Connect = Instance.new("TextButton")
+local UIGradient_3 = Instance.new("UIGradient")
+local TextLabel_2 = Instance.new("TextLabel")
+local UIGradient_4 = Instance.new("UIGradient")
 
 --Properties:
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+key.Name = "key"
+key.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 Main.Name = "Main"
-Main.Parent = ScreenGui
+Main.Parent = key
 Main.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Main.BorderSizePixel = 0
@@ -76,3 +83,46 @@ Tab.Position = UDim2.new(0.0158102773, 0, 0.288288265, 0)
 Tab.Size = UDim2.new(0, 489, 0, 307)
 
 UICorner_4.Parent = Tab
+
+TextBox.Parent = Tab
+TextBox.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.0184049085, 0, 0.208469048, 0)
+TextBox.Size = UDim2.new(0, 470, 0, 60)
+TextBox.Font = Enum.Font.FredokaOne
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 50.000
+
+UICorner_5.Parent = TextBox
+
+Connect.Name = "Connect"
+Connect.Parent = Tab
+Connect.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Connect.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Connect.BorderSizePixel = 0
+Connect.Position = UDim2.new(0.0163599178, 0, 0.44299674, 0)
+Connect.Size = UDim2.new(0, 470, 0, 60)
+Connect.Font = Enum.Font.FredokaOne
+Connect.Text = "Connect"
+Connect.TextColor3 = Color3.fromRGB(255, 255, 255)
+Connect.TextSize = 50.000
+
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(90, 8, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_3.Parent = Connect
+
+TextLabel_2.Parent = Tab
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.0204498973, 0, 0.0447437391, 0)
+TextLabel_2.Size = UDim2.new(0, 469, 0, 33)
+TextLabel_2.Font = Enum.Font.FredokaOne
+TextLabel_2.Text = "Enter Your Keys"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 40.000
+
+UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 68, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_4.Parent = TextLabel_2
