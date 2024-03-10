@@ -1,6 +1,14 @@
 if game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("key") then
     game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("key"):Destroy()
 end
+if _G.Key ~= "" or _G.Key == nil then
+    _G.Key = ""
+end
+if _G.Label ~= "" or _G.Lable == nil then
+    _G.Label = "Enter Your Key"
+end
+wait(0.5)
+
 
 local key = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -90,7 +98,7 @@ TextBox.BorderSizePixel = 0
 TextBox.Position = UDim2.new(0.0184049085, 0, 0.208469048, 0)
 TextBox.Size = UDim2.new(0, 470, 0, 60)
 TextBox.Font = Enum.Font.FredokaOne
-TextBox.Text = _G.Key or ""
+TextBox.Text = _G.Key
 TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextBox.TextSize = 50.000
 
@@ -120,7 +128,7 @@ Enterkey.BorderSizePixel = 0
 Enterkey.Position = UDim2.new(0.0204498973, 0, 0.0447437391, 0)
 Enterkey.Size = UDim2.new(0, 469, 0, 33)
 Enterkey.Font = Enum.Font.FredokaOne
-Enterkey.Text = _G.Label or ""
+Enterkey.Text = _G.Label
 Enterkey.TextColor3 = Color3.fromRGB(255, 255, 255)
 Enterkey.TextSize = 40.000
 
@@ -141,14 +149,8 @@ Rejoin.TextSize = 50.000
 
 UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(90, 8, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
 UIGradient_5.Parent = Rejoin
-
-_G.Key = " "
-_G.Label = "Enter Your Key"
-Table = {
-    "KEY-A"
-}
 Connect.MouseButton1Down:connect(function()
-    if _G.Key == Table then
+    if _G.Key == "KEY-A" then
         _G.Label = "Key Is Connected"
         wait(1)
         game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("key"):Destroy()
