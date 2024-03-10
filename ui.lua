@@ -155,7 +155,9 @@ Rejoin.TextSize = 50.000
 UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(90, 8, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
 UIGradient_5.Parent = Rejoin
 
-
+spawn(function()
+    task.spawn(_G.Key)
+end)
 
 Connect.MouseButton1Down:connect(function()
     print(_G.Key)
