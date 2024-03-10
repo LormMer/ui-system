@@ -155,14 +155,15 @@ Rejoin.TextSize = 50.000
 UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(90, 8, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
 UIGradient_5.Parent = Rejoin
 
-TextBox.FocusLost:Connect(function()
-    RealTextbox.Text = _G.Key
-    if _G.Key == "" then
-        RealTextbox.Text = ""
-    end
-end)
+
 Connect.MouseButton1Down:connect(function()
-    print(_G.Key)
+    if TextBox.Text == "KEY-A" then
+        Enterkey.Text = "Key Is Connected"
+        wait(0.5)
+        game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("key"):Destroy()
+    else
+        Enterkey.Text = "Key Is Not Connected"
+    end
 end)
 Rejoin.MouseButton1Down:connect(function()
     local TeleportService = game:GetService("TeleportService")
