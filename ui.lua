@@ -156,13 +156,14 @@ UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fr
 UIGradient_5.Parent = Rejoin
 
 TextBox.FocusLost:Connect(function()
-    TextBox.Text = _G.Key
-    if _G.Key == "" then
-        TextBox.Text = ""
+    if TextBox.Text == "KEY-A" then
+        _G.Key = "KEY-A"
     end
 end)
 Connect.MouseButton1Down:connect(function()
-    print(_G.Key)
+    if _G.Key == "KEY-A" then
+        print(true)
+    end
 end)
 Rejoin.MouseButton1Down:connect(function()
     local TeleportService = game:GetService("TeleportService")
