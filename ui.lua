@@ -120,7 +120,7 @@ Enterkey.BorderSizePixel = 0
 Enterkey.Position = UDim2.new(0.0204498973, 0, 0.0447437391, 0)
 Enterkey.Size = UDim2.new(0, 469, 0, 33)
 Enterkey.Font = Enum.Font.FredokaOne
-Enterkey.Text = "Enter Your Keys"
+Enterkey.Text = _G.Label
 Enterkey.TextColor3 = Color3.fromRGB(255, 255, 255)
 Enterkey.TextSize = 40.000
 
@@ -143,11 +143,33 @@ UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fr
 UIGradient_5.Parent = Rejoin
 
 _G.Key = " "
+_G.Label = "Enter Your Key"
 Table = {
     "KEY-A"
 }
-if _G.Key == Table then
-    Connect.MouseButton1Down:connect(function()
+Connect.MouseButton1Down:connect(function()
+    if _G.Key == Table then
+        _G.Label = "Key Is Connected"
+        wait(1)
         game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("key"):Destroy()
+    else
+        _G.Label = "Key Is Not Connected"
+    end
+end)
+Rejoin.MouseButton1Down:connect(function()
+    local TeleportService = game:GetService("TeleportService")
+    local Players = game:GetService("Players")
+    local LocalPlayer = Players.LocalPlayer
+
+    local Rejoin = coroutine.create(function()
+        local Success, ErrorMessage = pcall(function()
+            TeleportService:Teleport(game.PlaceId, LocalPlayer)
+        end)
+
+        if ErrorMessage and not Success then
+            warn(ErrorMessage)
+        end
     end)
-end
+
+    coroutine.resume(Rejoin)
+end)
