@@ -1,10 +1,10 @@
 if game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("key") then
     game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("key"):Destroy()
 end
-if _G.Key ~= "" or _G.Key == nil then
+if _G.Key == "" or _G.Key == nil then
     _G.Key = ""
 end
-if _G.Label ~= "" or _G.Lable == nil then
+if _G.Label == "" or _G.Lable == nil then
     _G.Label = "Enter Your Key"
 end
 wait(0.5)
@@ -155,10 +155,12 @@ Rejoin.TextSize = 50.000
 UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(90, 8, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
 UIGradient_5.Parent = Rejoin
 
-spawn(function()
-    task.spawn(_G.Key)
+TextBox.FocusLost:Connect(function()
+    RealTextbox.Text = _G.Key
+    if _G.Key == "" then
+        RealTextbox.Text = ""
+    end
 end)
-
 Connect.MouseButton1Down:connect(function()
     print(_G.Key)
 end)
