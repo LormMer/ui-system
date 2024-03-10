@@ -1,7 +1,6 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
+if game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("key") then
+    game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("key"):Destroy()
+end
 
 local key = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -19,10 +18,10 @@ local TextBox = Instance.new("TextBox")
 local UICorner_5 = Instance.new("UICorner")
 local Connect = Instance.new("TextButton")
 local UIGradient_3 = Instance.new("UIGradient")
-local TextLabel_2 = Instance.new("TextLabel")
+local Enterkey = Instance.new("TextLabel")
 local UIGradient_4 = Instance.new("UIGradient")
-
---Properties:
+local Rejoin = Instance.new("TextButton")
+local UIGradient_5 = Instance.new("UIGradient")
 
 key.Name = "key"
 key.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -91,7 +90,7 @@ TextBox.BorderSizePixel = 0
 TextBox.Position = UDim2.new(0.0184049085, 0, 0.208469048, 0)
 TextBox.Size = UDim2.new(0, 470, 0, 60)
 TextBox.Font = Enum.Font.FredokaOne
-TextBox.Text = ""
+TextBox.Text = _G.Key 
 TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextBox.TextSize = 50.000
 
@@ -112,17 +111,43 @@ Connect.TextSize = 50.000
 UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(90, 8, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
 UIGradient_3.Parent = Connect
 
-TextLabel_2.Parent = Tab
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.0204498973, 0, 0.0447437391, 0)
-TextLabel_2.Size = UDim2.new(0, 469, 0, 33)
-TextLabel_2.Font = Enum.Font.FredokaOne
-TextLabel_2.Text = "Enter Your Keys"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 40.000
+Enterkey.Name = "Enter key"
+Enterkey.Parent = Tab
+Enterkey.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Enterkey.BackgroundTransparency = 1.000
+Enterkey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Enterkey.BorderSizePixel = 0
+Enterkey.Position = UDim2.new(0.0204498973, 0, 0.0447437391, 0)
+Enterkey.Size = UDim2.new(0, 469, 0, 33)
+Enterkey.Font = Enum.Font.FredokaOne
+Enterkey.Text = "Enter Your Keys"
+Enterkey.TextColor3 = Color3.fromRGB(255, 255, 255)
+Enterkey.TextSize = 40.000
 
 UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 68, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient_4.Parent = TextLabel_2
+UIGradient_4.Parent = Enterkey
+
+Rejoin.Name = "Rejoin"
+Rejoin.Parent = Tab
+Rejoin.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Rejoin.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Rejoin.BorderSizePixel = 0
+Rejoin.Position = UDim2.new(0.0163599178, 0, 0.684039116, 0)
+Rejoin.Size = UDim2.new(0, 470, 0, 60)
+Rejoin.Font = Enum.Font.FredokaOne
+Rejoin.Text = "Rejoin"
+Rejoin.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rejoin.TextSize = 50.000
+
+UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(90, 8, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_5.Parent = Rejoin
+
+
+Table = {
+    "KEY-A"
+}
+if _G.Key == Table then
+    Connect.MouseButton1Down:connect(function()
+        game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("key"):Destroy()
+    end)
+end
