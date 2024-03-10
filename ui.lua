@@ -142,7 +142,7 @@ Rejoin.TextSize = 50.000
 UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(90, 8, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
 UIGradient_5.Parent = Rejoin
 
-
+_G.Key = " "
 Table = {
     "KEY-A"
 }
