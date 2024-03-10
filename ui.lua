@@ -158,7 +158,11 @@ UIGradient_5.Parent = Rejoin
 
 Connect.MouseButton1Down:connect(function()
     if TextBox.Text == "KEY-A" then
-        print(true)
+        Enterkey.Text = "Key Is Connected"
+        wait(0.5)
+        game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("key"):Destroy()
+    else
+        Enterkey.Text = "Key Is Not Connected"
     end
 end)
 Rejoin.MouseButton1Down:connect(function()
